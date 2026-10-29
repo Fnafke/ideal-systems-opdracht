@@ -4,6 +4,7 @@ import { PostService } from "../services/PostService";
 
 const PostOverview: React.FC = () => {
     const [posts, setPosts] = useState<Post[]>([]);
+    const [searchTerm, setSearchTerm] = useState<string>("");
 
     const fetchPosts = async () => {
         const posts: Post[] = await PostService.fetchPosts();
@@ -14,12 +15,22 @@ const PostOverview: React.FC = () => {
         fetchPosts();
     }, []);
 
+    const filteredPosts = posts.filter((post) =>
+        post.title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
     return <>
-    {posts.map((post) => (
+    <input 
+        type="text" 
+        placeholder="Search post titles" 
+        value={searchTerm} 
+        onChange={(e) => setSearchTerm(e.target.value)} 
+    />
+    {filteredPosts.length > 0 && filteredPosts.map((post) => (
         <ul key={post.id}>
             <li>{post.title}</li>
         </ul>
-    ))}
+    )) || <p>No posts available.</p>}
     </>
 }
 

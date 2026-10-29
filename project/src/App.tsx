@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 //import './App.css';
-import PostOverview from './components/PostOverview';
+import PostsOverview from './components/PostsOverview';
 import { Post } from './types/types';
 import { PostService } from './services/PostService';
 import SinglePostOverview from './components/SinglePostOverview';
@@ -34,7 +34,7 @@ function App() {
           onChange={(e) => setSearchTerm(e.target.value)}
           />
           {filteredPosts.length > 0 ? (
-            <PostOverview posts={filteredPosts} onViewPost={(post) => setSelectedPost(post)} />
+            <PostsOverview posts={filteredPosts} onViewPost={(post) => setSelectedPost(post)} />
           ) : (
             <p>No posts found.</p>
           )}

@@ -1,11 +1,11 @@
 import { Post } from "../types/types";
 
-type PostOverviewProps = {
+type PostsOverviewProps = {
     posts: Post[];
     onViewPost: (post: Post) => void;
 }
 
-const PostOverview: React.FC<PostOverviewProps> = ({ posts, onViewPost }: PostOverviewProps) => {
+const PostsOverview: React.FC<PostsOverviewProps> = ({ posts, onViewPost }: PostsOverviewProps) => {
 
     return (
         <ul>
@@ -19,4 +19,4 @@ const PostOverview: React.FC<PostOverviewProps> = ({ posts, onViewPost }: PostOv
     )
 }
 
-export default PostOverview;
+export default PostsOverview;

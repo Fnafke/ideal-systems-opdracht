@@ -1,7 +1,4 @@
-import { useEffect, useState } from "react";
 import { Post } from "../types/types";
-import { PostService } from "../services/PostService";
-import SinglePostOverview from "./SinglePostOverview";
 
 type PostOverviewProps = {
     posts: Post[];

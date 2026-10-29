@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from 'react';
+//import './App.css';
 import PostOverview from './components/PostOverview';
 import { Post } from './types/types';
 import { PostService } from './services/PostService';
@@ -41,7 +40,7 @@ function App() {
           )}
         </div>
       )}
-      
+
       {selectedPost && (
         <SinglePostOverview post={selectedPost} onClose={() => setSelectedPost(null)} />
       )}
